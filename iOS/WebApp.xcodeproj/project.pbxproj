@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		841F8E6F26C21A6A002EBA50 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841F8E6E26C21A6A002EBA50 /* WebKit.framework */; };
+		841F8E8E26C2A6C1002EBA50 /* XYScriptMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 841F8E8526C2A6C1002EBA50 /* XYScriptMessage.m */; };
+		841F8E8F26C2A6C1002EBA50 /* XYWKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 841F8E8626C2A6C1002EBA50 /* XYWKWebView.m */; };
+		841F8E9026C2A6C1002EBA50 /* XYWKTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 841F8E8726C2A6C1002EBA50 /* XYWKTool.m */; };
+		841F8E9126C2A6C1002EBA50 /* XYWKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841F8E8826C2A6C1002EBA50 /* XYWKWebViewController.m */; };
+		841F8E9226C2A6C1002EBA50 /* wk_backIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 841F8E8C26C2A6C1002EBA50 /* wk_backIcon@2x.png */; };
+		841F8E9526C2A726002EBA50 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841F8E9426C2A726002EBA50 /* WebViewController.m */; };
 		8457797026C2135300C5D3AD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8457796F26C2135300C5D3AD /* AppDelegate.m */; };
 		8457797326C2135300C5D3AD /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8457797226C2135300C5D3AD /* SceneDelegate.m */; };
 		8457797626C2135300C5D3AD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8457797526C2135300C5D3AD /* ViewController.m */; };
@@ -19,6 +25,17 @@
 
 /* Begin PBXFileReference section */
 		841F8E6E26C21A6A002EBA50 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		841F8E8526C2A6C1002EBA50 /* XYScriptMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYScriptMessage.m; sourceTree = "<group>"; };
+		841F8E8626C2A6C1002EBA50 /* XYWKWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYWKWebView.m; sourceTree = "<group>"; };
+		841F8E8726C2A6C1002EBA50 /* XYWKTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYWKTool.m; sourceTree = "<group>"; };
+		841F8E8826C2A6C1002EBA50 /* XYWKWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYWKWebViewController.m; sourceTree = "<group>"; };
+		841F8E8926C2A6C1002EBA50 /* XYWKWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYWKWebView.h; sourceTree = "<group>"; };
+		841F8E8A26C2A6C1002EBA50 /* XYScriptMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYScriptMessage.h; sourceTree = "<group>"; };
+		841F8E8B26C2A6C1002EBA50 /* XYWKTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYWKTool.h; sourceTree = "<group>"; };
+		841F8E8C26C2A6C1002EBA50 /* wk_backIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wk_backIcon@2x.png"; sourceTree = "<group>"; };
+		841F8E8D26C2A6C1002EBA50 /* XYWKWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYWKWebViewController.h; sourceTree = "<group>"; };
+		841F8E9326C2A726002EBA50 /* WebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		841F8E9426C2A726002EBA50 /* WebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		8457796B26C2135300C5D3AD /* WebApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8457796E26C2135300C5D3AD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8457796F26C2135300C5D3AD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -53,6 +70,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		841F8E8426C2A6C1002EBA50 /* XYWKWebView */ = {
+			isa = PBXGroup;
+			children = (
+				841F8E8926C2A6C1002EBA50 /* XYWKWebView.h */,
+				841F8E8626C2A6C1002EBA50 /* XYWKWebView.m */,
+				841F8E8D26C2A6C1002EBA50 /* XYWKWebViewController.h */,
+				841F8E8826C2A6C1002EBA50 /* XYWKWebViewController.m */,
+				841F8E8A26C2A6C1002EBA50 /* XYScriptMessage.h */,
+				841F8E8526C2A6C1002EBA50 /* XYScriptMessage.m */,
+				841F8E8B26C2A6C1002EBA50 /* XYWKTool.h */,
+				841F8E8726C2A6C1002EBA50 /* XYWKTool.m */,
+				841F8E8C26C2A6C1002EBA50 /* wk_backIcon@2x.png */,
+			);
+			path = XYWKWebView;
+			sourceTree = "<group>";
+		};
 		8457796226C2135300C5D3AD = {
 			isa = PBXGroup;
 			children = (
@@ -73,10 +106,13 @@
 		8457796D26C2135300C5D3AD /* WebApp */ = {
 			isa = PBXGroup;
 			children = (
+				841F8E8426C2A6C1002EBA50 /* XYWKWebView */,
 				8457796E26C2135300C5D3AD /* AppDelegate.h */,
 				8457796F26C2135300C5D3AD /* AppDelegate.m */,
 				8457797126C2135300C5D3AD /* SceneDelegate.h */,
 				8457797226C2135300C5D3AD /* SceneDelegate.m */,
+				841F8E9326C2A726002EBA50 /* WebViewController.h */,
+				841F8E9426C2A726002EBA50 /* WebViewController.m */,
 				8457797426C2135300C5D3AD /* ViewController.h */,
 				8457797526C2135300C5D3AD /* ViewController.m */,
 				8457797726C2135300C5D3AD /* Main.storyboard */,
@@ -146,6 +182,7 @@
 			files = (
 				8457797E26C2135700C5D3AD /* LaunchScreen.storyboard in Resources */,
 				8457797B26C2135700C5D3AD /* Assets.xcassets in Resources */,
+				841F8E9226C2A6C1002EBA50 /* wk_backIcon@2x.png in Resources */,
 				8457797926C2135300C5D3AD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,10 +194,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				841F8E8F26C2A6C1002EBA50 /* XYWKWebView.m in Sources */,
+				841F8E8E26C2A6C1002EBA50 /* XYScriptMessage.m in Sources */,
+				841F8E9126C2A6C1002EBA50 /* XYWKWebViewController.m in Sources */,
 				8457797626C2135300C5D3AD /* ViewController.m in Sources */,
+				841F8E9526C2A726002EBA50 /* WebViewController.m in Sources */,
 				8457797026C2135300C5D3AD /* AppDelegate.m in Sources */,
 				8457798126C2135700C5D3AD /* main.m in Sources */,
 				8457797326C2135300C5D3AD /* SceneDelegate.m in Sources */,
+				841F8E9026C2A6C1002EBA50 /* XYWKTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +346,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FPGTLTNZWM;
 				INFOPLIST_FILE = WebApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -311,7 +354,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_BUNDLE_IDENTIFIER = cn.yihu365.WebApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yihu365.WebApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
@@ -325,6 +368,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FPGTLTNZWM;
 				INFOPLIST_FILE = WebApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -332,7 +376,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_BUNDLE_IDENTIFIER = cn.yihu365.WebApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yihu365.WebApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
