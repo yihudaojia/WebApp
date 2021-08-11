@@ -563,7 +563,7 @@
                         
                         self.wx_redirect_url = [self.wx_redirect_url stringByRemovingPercentEncoding];
                         
-                        NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[self.wx_redirect_url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]]] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
+                        NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.wx_redirect_url]];
                         [self.webView loadRequest:request];
                         self.wx_redirect_url = nil;
                     }
@@ -581,8 +581,8 @@
                         // 没有替换，手动替换
                         alipayUrl = [alipayUrl stringByReplacingOccurrencesOfString:@"alipays" withString:self.zfb_AppUrlScheme];
                         dispatch_async(dispatch_get_main_queue(), ^{
-                                
-                            NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[alipayUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]]] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
+                            
+                            NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:alipayUrl]];
                             [self.webView loadRequest:request];
                         });
                         
@@ -608,7 +608,7 @@
     {// 即用户设置了微信支付
         NSString *newUrl = navigationAction.request.URL.absoluteString;
         NSString *referer = [NSString stringWithFormat:@"%@://",self.wx_Referer];
-        if ([newUrl rangeOfString:@"https://wx.tenpay.com"].location != NSNotFound) {
+        if ([newUrl hasPrefix:@"https://wx.tenpay.com"]) {
             
             // 拿到最后一个参数，即&redirect_url=xxx
             NSArray <NSString *>*paramsArray = [newUrl componentsSeparatedByString:@"="];
