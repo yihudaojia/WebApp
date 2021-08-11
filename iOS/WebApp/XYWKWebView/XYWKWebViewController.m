@@ -563,7 +563,7 @@
                         
                         self.wx_redirect_url = [self.wx_redirect_url stringByRemovingPercentEncoding];
                         
-                        NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[self.wx_redirect_url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
+                        NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[self.wx_redirect_url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]]] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
                         [self.webView loadRequest:request];
                         self.wx_redirect_url = nil;
                     }
@@ -582,7 +582,7 @@
                         alipayUrl = [alipayUrl stringByReplacingOccurrencesOfString:@"alipays" withString:self.zfb_AppUrlScheme];
                         dispatch_async(dispatch_get_main_queue(), ^{
                                 
-                            NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[alipayUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
+                            NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[alipayUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]]] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
                             [self.webView loadRequest:request];
                         });
                         

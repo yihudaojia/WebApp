@@ -145,7 +145,7 @@
     }
     
     NSString *query = [pairs componentsJoinedByString:@"&"];
-    baseURL = [baseURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    baseURL = [baseURL stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
     
     NSString* url = @"";
     if ([baseURL containsString:@"?"]) {
