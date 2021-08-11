@@ -18,7 +18,6 @@
 /** locationMgr */
 @property (nonatomic, strong)       CLLocationManager * locationMgr;
 
-@property(nonatomic , strong) UIView  *HUD;
 @property(nonatomic , strong) UIProgressView  *progressView;
 
 /**
@@ -36,7 +35,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         _webViewAppName = @"webViewApp";
-        _showHudWhenLoading = YES;
         _shouldShowProgress = YES;
         _isUseWebPageTitle = YES;
         _alwaysAllowSideBackGesture = YES;
@@ -63,8 +61,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    self.wx_Referer = @"mi.yihu365.cn";
     
     self.title = @"加载中";
     
@@ -104,7 +100,6 @@
     [super viewWillDisappear:animated];
     
     [self hideLoadingProgressView];
-    [self hideHUD];
     
 }
 - (void)viewDidDisappear:(BOOL)animated {
@@ -168,40 +163,6 @@
     }
 }
 
-- (UIView *)HUD{
-    if (_HUD == nil) {
-        _HUD = [UIView new];
-        _HUD.frame = CGRectMake(50, 0, XYWKScreenW - 100, XYWKScreenH);
-        _HUD.backgroundColor  = [UIColor clearColor];
-        
-        UILabel *tip = [UILabel new];
-        tip.text = @"正在加载...";
-        tip.textAlignment = NSTextAlignmentCenter;
-        [_HUD addSubview:tip];
-        tip.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
-        CGFloat X = _HUD.frame.size.width/4;
-        CGFloat width = _HUD.frame.size.width/2;
-        CGFloat height = 50;
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            tip.frame = CGRectMake(X, XYWKScreenH/2 - 100, width, height);
-        });
-        tip.layer.cornerRadius = 5;
-        tip.clipsToBounds = YES;
-    }
-    return _HUD;
-}
-
-- (void)showHUD{
-    if (!self.HUD.superview) {
-        [self.view addSubview:self.HUD];
-    }
-}
-
-- (void)hideHUD{
-    [self.HUD removeFromSuperview];
-    self.HUD = nil;
-}
-
 
 #pragma mark -- setters
 // 设置内部的WebView是否可以允许系统左滑返回之前浏览页面的功能
@@ -215,9 +176,7 @@
     if ([keyPath isEqualToString:@"estimatedProgress"]) {
         
         if (object == self.webView) {
-            if (self.showHudWhenLoading) {
-                [self showLoadingProgress:self.webView.estimatedProgress andTintColor:[UIColor colorWithRed:24/255.0 green:124/255.0 blue:244/255.0f alpha:1.0]];
-            }
+            [self showLoadingProgress:self.webView.estimatedProgress andTintColor:[UIColor colorWithRed:24/255.0 green:124/255.0 blue:244/255.0f alpha:1.0]];
         }
         else{
             [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
@@ -463,10 +422,6 @@
  */
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
     
-    if (_showHudWhenLoading) {
-        [self showHUD];
-    }
-    
     XYWKLog(@"%s：%@", __FUNCTION__,webView.URL);
 }
 
@@ -488,9 +443,7 @@
  *  @param navigation 当前navigation
  */
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
-    
-    [self hideHUD];
-    
+        
     // 实际上是首页加载完成之后就会走这个方法
     XYWKLog(@"%s 这个页面加载完成了",__func__);
     
@@ -507,7 +460,6 @@
     
     XYWKLog(@"%s%@", __FUNCTION__,error);
     [self hideLoadingProgressView];
-    [self hideHUD];
     
     // 当scheme为非 http(s)会引发错误
     // Error Domain= Code=0 "Redirection to URL with a scheme that is not HTTP(S)" UserInfo={_WKRecoveryAttempterErrorKey=<WKReloadFrameErrorRecoveryAttempter: 0x2835822a0>, NSErrorFailingURLStringKey=itms-appss://apps.apple.com/cn/app/id1092031003, NSErrorFailingURLKey=itms-appss://apps.apple.com/cn/app/id1092031003, NSLocalizedDescription=Redirection to URL with a scheme that is not HTTP(S)}

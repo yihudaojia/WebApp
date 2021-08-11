@@ -27,7 +27,7 @@
 			<string>yihu365</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>mi.yihu365.cn</string>
+				<string>demo.yihu365.cn</string>
 			</array>
 		</dict>
 	</array>
@@ -37,6 +37,7 @@
 	<array>
 		<string>weixin</string>
 		<string>weixinULAPI</string>
+		<string>wechat</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
