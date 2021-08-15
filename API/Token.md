@@ -2,7 +2,7 @@
 
 ### 请求网址，本请求有IP白名单，POST
 ```
-https://openapi.yihu365.cn/third/user/login
+https://open.yihu365.cn/partner/user/login
 ```
 
 ### Content-Type
